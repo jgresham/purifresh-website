@@ -1,0 +1,14 @@
+.navbar .navbar-header {
+	  width: 67%; // change this to match your design, by increasing it or decreasing it.
+}
+.number-counters h2 {
+  color: #ececec;
+}
+.number-counters .sec-heading {
+  padding-top: 100px;
+  margin-bottom: 0px;
+}
+.number-counters, .number-counters-dark-bg {
+  background: url('../images/hospital.jpeg') no-repeat;
+  background-size: cover;
+}
