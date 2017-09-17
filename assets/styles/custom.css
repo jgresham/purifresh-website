@@ -1,5 +1,5 @@
 .navbar .navbar-header {
-	  width: 67%; // change this to match your design, by increasing it or decreasing it.
+	  //width: 17%; // change this to match your design, by increasing it or decreasing it.
 }
 .number-counters h2 {
   color: #ececec;
@@ -11,4 +11,35 @@
 .number-counters, .number-counters-dark-bg {
   background: url('../images/hospital.jpeg') no-repeat;
   background-size: cover;
+}
+.fs-video-hero .hero-content-wrapper .hero-content .hero-subheading {
+	margin-top: 20px;
+	margin-bottom: 150px;
+}
+.team-4col .img-responsive {
+	width: 100%;
+}
+.team-4col .row {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.customHeaderFont {
+	letter-spacing: 2px;
+}
+.noTextTransform {
+	text-transform: none;
+}
+small.noTextTransform{
+	text-transform: none;
+}
+@media (max-width: 992px) {
+	.ft-x .ft-item i {
+		margin: 0px;
+	}
+}
+/* Feature - Cards 2 thumbnail image fix */
+@media (max-width: 1260px) {
+	.ft-cards-2 .ft-card-item img {
+		max-width: 100%;
+	}
 }
