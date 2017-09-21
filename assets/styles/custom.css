@@ -1,5 +1,33 @@
-.navbar .navbar-header {
-	  //width: 17%; // change this to match your design, by increasing it or decreasing it.
+#page-top a, #page-top p, #page-top h1, #page-top h2, #page-top h3, #page-top h4,#page-top h5 {
+	text-transform: none;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.ws-s {
+	padding-bottom: 10px;
+}
+@media (max-width: 992px) {
+	.ft-x .ft-item h5 {
+		height: 85px;
+	}
+}
+i.fa.fa-5 {
+	font-size: 10em;
+	/*width: 100px;
+	height: 100px;*/
+}
+@media (min-width: 1260px) {
+	.navbar .navbar-header {
+	 	width: 10%; // change this to match your design, by increasing it or decreasing it.
+	}
+}
+.sec-heading-margin-top {
+	margin-top: 100px;
+}
+.navbar .navbar-nav li a {
+	font-size: 1em;
 }
 .number-counters h2 {
   color: #ececec;
@@ -35,6 +63,7 @@ small.noTextTransform{
 @media (max-width: 992px) {
 	.ft-x .ft-item i {
 		margin: 0px;
+		margin-right: 20px;
 	}
 }
 /* Feature - Cards 2 thumbnail image fix */
