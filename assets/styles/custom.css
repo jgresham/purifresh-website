@@ -20,7 +20,7 @@ i.fa.fa-5 {
 }
 @media (min-width: 1260px) {
 	.navbar .navbar-header {
-	 	width: 10%; // change this to match your design, by increasing it or decreasing it.
+	 	width: 20%; // change this to match your design, by increasing it or decreasing it.
 	}
 }
 .sec-heading-margin-top {
@@ -71,4 +71,11 @@ small.noTextTransform{
 	.ft-cards-2 .ft-card-item img {
 		max-width: 100%;
 	}
+	.team-4col .t-item .t-image, .team-4col .t-item {
+		width: auto;
+	}
+}
+/* Navbar header - Line height less than 1em? fix*/
+.navbar .navbar-nav .dropdown .dropdown-menu li a {
+	line-height: 1em;
 }
