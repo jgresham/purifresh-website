@@ -1,6 +1,9 @@
 #page-top a, #page-top p, #page-top h1, #page-top h2, #page-top h3, #page-top h4,#page-top h5 {
 	text-transform: none;
 }
+.col-fill-img {
+	width: 100%;
+}
 .col-centered{
     float: none;
     margin: 0 auto;
