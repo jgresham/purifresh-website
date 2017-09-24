@@ -14,19 +14,24 @@
 'use strict';
 
 const express = require('express');
+const path = require('path');
 
 const app = express();
 
 // [START hello_world]
 // Say hello!
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!');
+  res.sendFile('index.html', { root: __dirname });
+  // res.sendFile(__dirname + '/../index.html');
+  // res.status(200).send('Hello, world!');
 });
 // [END hello_world]
 
 if (module === require.main) {
   // [START server]
   // Start the server
+  app.use(express.static(path.join(__dirname, '../')));
+
   const server = app.listen(process.env.PORT || 8081, () => {
     const port = server.address().port;
     console.log(`App listening on port ${port}`);
