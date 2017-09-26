@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 if (module === require.main) {
   // [START server]
   // Start the server
-  app.use(express.static(path.join(__dirname, '../')));
+  app.use(express.static(path.join(__dirname, '/')));
 
   const server = app.listen(process.env.PORT || 8081, () => {
     const port = server.address().port;
