@@ -4,9 +4,8 @@
     var puriFreshApp = angular.module('puriFreshApp', ['ng', 'ngRoute']);
 
     // configure our routes
-    puriFreshApp.config(function($routeProvider) {
+    puriFreshApp.config(function($routeProvider, $locationProvider) {
         $routeProvider
-
             // route for the home page
             .when('/', {
                 templateUrl : 'pages/home.html',
@@ -47,7 +46,15 @@
             .when('/news', {
                 templateUrl : 'pages/news.html',
                 controller  : 'aboutController'
+            })
+
+            .when('/cn', {
+                templateUrl : 'pages/home.html',
+                controller  : 'cnController'
             });
+
+        // use the HTML5 History API
+        // $locationProvider.html5Mode(true);
     });
 
     puriFreshApp.controller('localeController', function($scope) {
@@ -231,7 +238,7 @@
         }
       };
       $scope.langSelections = ['EN', 'CN'];
-      $scope.lang = 'CN';
+      $scope.lang = 'EN';
 
       $scope.isCN = function() {
         return $scope.lang == 'CN';
@@ -239,6 +246,16 @@
       $scope.onLangSelected = function (langSelection) {
           $scope.lang = langSelection;
       };
+      $scope.staticText = function(label) {
+        try {
+          var word = $scope.words[label][$scope.lang];
+          return word
+        }
+        catch (e) {
+           return '';
+        }
+      };
+
       // function setLang() {
       //   for (var key in $scope.words) {
       //     if ($scope.words.hasOwnProperty(key)) {
@@ -254,18 +271,12 @@
 
     // create the controller and inject Angular's $scope
     puriFreshApp.controller('mainController', function($scope) {
-
-
-        $scope.staticText = function(label) {
-          try {
-            var word = $scope.words[label][$scope.lang];
-            return word
-          }
-          catch (e) {
-             return '';
-          }
-        };
     });
+
+    // create the controller and inject Angular's $scope
+    puriFreshApp.controller('cnController', ['$scope', function($scope) {
+      $scope.onLangSelected('CN');
+    }]);
 
     puriFreshApp.controller('aboutController', function($scope) {
         $scope.message = 'Look! I am an about page.';
