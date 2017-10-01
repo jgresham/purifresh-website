@@ -233,7 +233,7 @@
           CN: '了解更多'
         },
         under_construction: {
-          EN: 'Under construction',
+          EN: 'Under construction🚧',
           CN: '正在施工🚧'
         }
       };
@@ -271,6 +271,7 @@
 
     // create the controller and inject Angular's $scope
     puriFreshApp.controller('mainController', function($scope) {
+      $scope.onLangSelected('EN');
     });
 
     // create the controller and inject Angular's $scope
