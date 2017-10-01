@@ -25,6 +25,9 @@ i.fa.fa-5 {
 	.navbar .navbar-header {
 	 	width: 20%; // change this to match your design, by increasing it or decreasing it.
 	}
+	.navbar .navbar-header.navbar-header-cn {
+		width: 30%;
+	}
 }
 .sec-heading-margin-top {
 	margin-top: 100px;
