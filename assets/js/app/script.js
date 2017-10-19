@@ -90,7 +90,7 @@
         },
         hero_life: {
           EN: 'Life',
-          CN: '健康纯净生活'
+          CN: '降解农药残留，打造健康纯净生活'
         },
         hero_scroll_down: {
           EN: 'scroll down',
@@ -127,6 +127,42 @@
         pesticides_yield: {
           EN: 'Improve yield',
           CN: '提高产量'
+        },
+        pesticides_annual_consumption: {
+          EN: 'Annual pesticide consumption',
+          CN: '年农药使用量'
+        },
+        pesticides_kilo_per_person: {
+          EN: 'Kilograms per person',
+          CN: '人均（千克）'
+        },
+        millions_kilogram: {
+          EN: 'Millions Kilograms',
+          CN: '总量（百万千克'
+        },
+        country: {
+          EN: 'country',
+          CN: '国家'
+        },
+        china: {
+          EN: 'China',
+          CN: '中国'
+        },
+        united_states: {
+          EN: 'United States',
+          CN: '美国'
+        },
+        argentina: {
+          EN: 'Argentina',
+          CN: '阿根廷'
+        },
+        thailand: {
+          EN: 'Thailand',
+          CN: '泰国'
+        },
+        brazil: {
+          EN: 'Brazil',
+          CN: '巴西'
         },
         cons: {
           EN: 'Cons',
