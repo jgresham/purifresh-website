@@ -1,0 +1,345 @@
+<!doctype html>
+<html ng-app="puriFreshApp" ng-controller="localeController as l" class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PuriFresh - Life</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <base href="/"> -->
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="assets/styles/vendor/bootstrap.min.css">
+        <!-- Angular Material -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="assets/fonts/et-lineicons/css/style.css">
+        <link rel="styles heet" href="assets/fonts/linea-font/css/linea-font.css">
+        <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+        <!-- Slider -->
+        <link rel="stylesheet" href="assets/styles/vendor/slick.css">
+        <!-- Lightbox -->
+        <link rel="stylesheet" href="assets/styles/vendor/magnific-popup.css">
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="assets/styles/vendor/animate.css">
+
+
+        <!-- Definity CSS -->
+        <link rel="stylesheet" href="assets/styles/main.css">
+        <link rel="stylesheet" href="assets/styles/responsive.css">
+
+        <!-- custom css -->
+        <link rel="stylesheet" href="assets/styles/custom.css">
+
+        <!-- JS -->
+        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body id="page-top" ng-controller="mainController">
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+        <!-- ========== Preloader ========== -->
+
+        <div class="preloader">
+          <img src="assets/images/loader.svg" alt="Loading...">
+        </div>
+
+
+
+        <!-- ========== Navigation ========== -->
+
+        <nav class="navbar navbar-default navbar-fixed-top mega navbar-trans">
+          <div class="container">
+            <div class="navbar-header" ng-class="isCN() ? 'navbar-header-cn' : ''">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <!-- Logo -->
+              <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="assets/images/life-logo.png" alt="PuriFresh - Logo"></a>
+            </div><!-- / .navbar-header -->
+
+            <!-- Navbar Links -->
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <!-- Home -->
+                <li class="dropdown">
+                  <a href="#" role="button">
+                    {{ staticText('navbar_home') }}
+                  </a>
+                </li><!-- / Home -->
+                <!-- Pesticide effects -->
+                <li class="dropdown">
+                  <a href="#/pesticides">
+                    {{ staticText('navbar_pesticide_effects') }}
+                  </a>
+                </li><!-- / Pesticide effects -->
+                <!-- Products & Research -->
+                <li class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{ staticText('navbar_products') }}
+                    <span class="caret">
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu bg-solid">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <li class="dropdown-header">{{ staticText('navbar_products') }}</li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#products">{{ staticText('product_large') }}</a></li>
+                        <li><a href="#products">{{ staticText('product_midsize') }}</a></li>
+                        <li><a href="#products">{{ staticText('product_small_tall') }}</a></li>
+                        <li><a href="#products">{{ staticText('product_small_green') }}</a></li>
+                        <li><a href="#products">{{ staticText('product_liquid') }}</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </li><!-- / Products & Research -->
+                <!-- Team -->
+                <li class="dropdown">
+                  <a href="#/team" role="button">
+                    {{ staticText('navbar_team') }}
+                  </a>
+                </li><!-- / Team -->
+                <!-- Forum -->
+                <li class="dropdown">
+                  <a href="#/forum" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{ staticText('navbar_forum') }}
+                  </a>
+                </li><!-- / Forum -->
+                <!-- Be-a-Partner -->
+                <li class="dropdown">
+                  <a href="#/contact" role="button">
+                    {{ staticText('navbar_partner') }}
+                  </a>
+                </li><!-- / Be-a-Partner -->
+                <!-- News -->
+                <li class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">{{ staticText('navbar_news') }}<span class="caret"></span></a>
+                  <ul class="dropdown-menu bg-solid">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <li class="dropdown-header">{{ staticText('navbar_news') }}</li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="assets/images/press/may-2016-press-release.png">May 2016 Press Release</a></li>
+                        <li><a href="#/news">January 2017 Techinical Preview</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </li><!-- / news -->
+              </ul><!-- / .nav .navbar-nav -->
+
+
+              <!-- Navbar Links Right -->
+              <ul class="nav navbar-nav navbar-right navbar-inverse navbar-trans">
+
+                <!-- Languages -->
+                <li class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{lang}}<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li ng-repeat="langSelection in langSelections"><a ng-click="onLangSelected(langSelection)" href="">{{langSelection}}</a></li>
+                  </ul>
+                </li><!-- / Languages -->
+
+              </ul><!-- / .nav .navbar-nav .navbar-right -->
+
+            </div><!--/.navbar-collapse -->
+          </div><!-- / .container -->
+        </nav><!-- / .navbar -->
+
+        <!-- ========== Angular Injected View ========== -->
+        <div ng-view></div>
+
+
+        <!-- ========== Footer Contact ========== -->
+
+        <footer id="partner" class="footer-contact">
+          <div class="container-fluid">
+            <div class="row">
+
+              <!-- Contact Form -->
+              <div class="col-lg-6 no-gap section contact-form">
+                <header class="sec-heading">
+                  <h2>{{ staticText('contact_welcome') }}</h2>
+                  <span class="subheading">{{ staticText('contact') }}</span>
+                </header>
+
+                <form action="assets/contact-form/contact-form.php" method="POST" class="form-ajax wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+
+                  <!-- Name -->
+                  <div class="form-group">
+                    <label for="name-contact-1">{{ staticText('name') }}</label>
+                    <input type="text" name="name" id="name-contact-1" class="form-control validate-locally" placeholder="Enter your name">
+                    <span class="pull-right alert-error"></span>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="form-group">
+                    <label for="email-contact-1">{{ staticText('email') }}</label>
+                    <input type="email" name="email" id="email-contact-1" class="form-control validate-locally" placeholder="Enter your email">
+                    <span class="pull-right alert-error"></span>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="form-group">
+                    <label for="message-contact-1">{{ staticText('message') }}</label>
+                    <textarea class="form-control" name="message" id="message-contact-1" rows="5" placeholder="Your Message"></textarea>
+                  </div>
+                  <input type="submit" class="btn pull-right" value="Send Message">
+
+                  <!-- Ajax Message -->
+                  <div class="ajax-message col-md-12 no-gap"></div>
+
+                </form>
+              </div><!-- / .col-lg-6 -->
+
+              <!-- Map and address -->
+              <div class="col-lg-6 no-gap contact-info">
+
+                <!-- Show Info Button -->
+                <a href="#" class="show-info-link"><i class="fa fa-info"></i>Show info</a>
+
+                <div id="map-canvas" class="footer-map"></div>
+
+                <address class="contact-info-wrapper">
+                  <ul>
+                    <!-- Address -->
+                    <li class="contact-group">
+                      <span class="adr-heading">{{ staticText('address') }}</span>
+                      <span class="adr-info">Palo Alto, CA, US</span>
+                    </li>
+                    <!-- Email -->
+                    <li class="contact-group">
+                      <span class="adr-heading">{{ staticText('email') }}</span>
+                      <span class="adr-info">sayhello@email.com</span>
+                    </li>
+                  </ul>
+                  <ul>
+                    <!-- Phone -->
+                    <li class="contact-group">
+                      <span class="adr-heading">{{ staticText('phone') }}</span>
+                      <span class="adr-info">+ 123 4567 890</span>
+                    </li>
+                  </ul>
+
+                  <a href="#" class="show-map"><span class="linea-basic-geolocalize-05"></span>show on map</a>
+                </address>
+
+              </div><!-- / .col-lg-6 -->
+
+            </div><!-- / .row -->
+          </div><!-- / .container-fluid -->
+
+          <!-- ========== CTA - Newsletter Signup ========== -->
+
+          <div class="cta-newsletter cta-dark">
+            <div class="bg-overlay">
+              <div class="cta-wrapper">
+
+                <h3 class="cta-lead h-alt wow fadeIn" data-wow-delay=".1s" data-wow-duration="1s">{{ staticText('join_newsletter') }}</h3>
+
+                <form class="mc-ajax mc-form subscribe-form" _lpchecked="1">
+
+                  <!-- Email -->
+                  <input type="email" name="EMAIL" placeholder="Your email address" id="mc-email" class="wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s" >
+
+                  <!-- Send Button -->
+                  <input type="submit" name="subscribe" value="{{ staticText('join') }}" class="btn btn-light btn-large wow fadeInUp mc-send-btn" data-wow-delay=".1s" data-wow-duration="1s">
+
+                  <!-- Info (uncomment this for extra info) -->
+                  <!-- <label for="mc-email" class="mc-info"></label> -->
+
+                  <!-- Ajax message -->
+                  <div class="subscribe-result"></div>
+
+                </form>
+
+              </div><!-- / .cta-wrapper -->
+            </div><!-- / .bg-overlay -->
+          </div><!-- / .cta-newsletter -->
+
+          <!-- Social Links -->
+          <div class="dark-bg">
+            <div class="container footer-social-links">
+              <div class="row">
+
+                <ul>
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+                </ul>
+
+              </div>
+            </div><!-- / .container -->
+          </div><!-- / .dark-bg -->
+
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-md-6">
+                  <small class="noTextTransform">&copy; 2017 PuriFresh</small>
+                </div>
+
+                <div class="col-md-6">
+                  <small><a href="#page-top" class="pull-right to-the-top">To the top<i class="fa fa-angle-up"></i></a></small>
+                </div>
+
+              </div><!-- / .row -->
+            </div><!-- / .container -->
+          </div><!-- / .copyright -->
+        </footer><!-- / .footer-contact -->
+
+
+
+        <!-- ========== Scripts ========== -->
+
+        <!-- Angular Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+        <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/vendor/google-fonts.js"></script>
+        <script src="assets/js/vendor/jquery.easing.js"></script>
+        <script src="assets/js/vendor/jquery.waypoints.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/bootstrap-hover-dropdown.min.js"></script>
+        <script src="assets/js/vendor/smoothscroll.js"></script>
+        <script src="assets/js/vendor/jquery.localScroll.min.js"></script>
+        <script src="assets/js/vendor/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/vendor/jquery.stellar.min.js"></script>
+        <script src="assets/js/vendor/jquery.parallax.js"></script>
+        <script src="assets/js/vendor/slick.min.js"></script>
+        <script src="assets/js/vendor/jquery.easypiechart.min.js"></script>
+        <script src="assets/js/vendor/countup.min.js"></script>
+        <script src="assets/js/vendor/isotope.min.js"></script>
+        <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/vendor/wow.min.js"></script>
+        <script src="assets/js/vendor/jquery.mb.YTPlayer.min.js"></script>
+        <script src="assets/js/vendor/jquery.ajaxchimp.js"></script>
+
+        <!-- Google Maps -->
+        <script src="assets/js/gmap.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcd7o0W0r846FC_GoHSK56xeAvP8fV4s"></script>
+
+        <!-- Definity JS -->
+        <script src="assets/js/main.js"></script>
+
+        <script src="assets/js/app/script.js"></script>
+    </body>
+</html>
