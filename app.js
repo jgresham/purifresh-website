@@ -33,7 +33,7 @@ if (module === require.main) {
   app.use('/assets', express.static(path.join(__dirname, '/assets')));
   app.use('/pages', express.static(path.join(__dirname, '/pages')));
 
-  const server = app.listen(process.env.PORT || 8081, () => {
+  const server = app.listen(process.env.PORT || 8080, () => {
     const port = server.address().port;
     console.log(`App listening on port ${port}`);
   });
